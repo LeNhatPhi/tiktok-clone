@@ -1,0 +1,150 @@
+.wrapper {
+    --pd-mg-SuggestedAccounts: 8px;
+
+    padding: 16px 0;
+    border-top: 1px solid var(--header-colorGray-hover);
+    border-bottom: 1px solid var(--header-colorGray-hover);
+    width: 340px;
+    .label {
+        padding: 0 var(--pd-mg-SuggestedAccounts);
+        margin-bottom: var(--pd-mg-SuggestedAccounts);
+        font-size: 14px;
+        line-height: 20px;
+        color: rgba(22, 24, 35, 0.75);
+        font-weight: 600;
+    }
+    .more-btn {
+        padding: 0 var(--pd-mg-SuggestedAccounts);
+        margin-top: var(--pd-mg-SuggestedAccounts);
+        color: var(--primary-color);
+        font-size: 1.4rem;
+        line-height: 20px;
+        font-weight: 600;
+        cursor: pointer;
+    }
+}
+
+//todo Suggested Account sidebar
+.account-item {
+    --height-inner: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 48px;
+    padding-left: var(--pd-mg-SuggestedAccounts);
+    .avatar {
+        width: 32px;
+        height: var(--height-inner);
+    }
+    .info {
+        height: var(--height-inner);
+        margin-top: -2px;
+        &__top {
+            display: flex;
+            .nickname {
+                color: rgb(22, 24, 35);
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 22px;
+            }
+            > svg {
+                font-size: 1.4rem;
+                margin: 1px 0 0 5px;
+                color: #20d5ec;
+            }
+        }
+        .username {
+            color: rgba(22, 24, 35, 0.75);
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 15px;
+        }
+        &__top .nickname,
+        .username {
+            max-width: 260px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            user-select: none;
+        }
+    }
+    &:hover {
+        background-color: var(--header-colorGray-hover);
+    }
+}
+
+//todo Common Styled Avatar
+.avatar,
+.avatar-preview {
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+//todo Suggested Account on Hover
+.suggested-account {
+    font-family: 'pReg';
+    &__wrapper {
+        width: 320px;
+        height: 172px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 20px;
+        &:hover {
+            background: var(--white);
+        }
+        .header {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .avatar-preview {
+                width: 44px;
+                height: 44px;
+            }
+            .follow-btn {
+                min-width: 106px;
+                height: 28px;
+            }
+        }
+        .info {
+            &__top {
+                align-items: center;
+                .nickname {
+                    font-size: 18px;
+                }
+                > svg {
+                    margin-top: initial;
+                    margin-bottom: 3px;
+                }
+            }
+            .username {
+                color: rgb(22, 24, 35, 0.9);
+                font-weight: 600;
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+        .footer {
+            display: flex;
+            width: 100%;
+            gap: 12px;
+            margin-top: 8px;
+            user-select: none;
+            .quantity {
+                font-weight: 700;
+                font-size: 17px;
+                line-height: 20px;
+                display: inline-block;
+                .unit {
+                    margin-left: 6px;
+                    color: rgba(22, 24, 35, 0.6);
+                    font-weight: 400;
+                    font-size: 17px;
+                    line-height: 20px;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}

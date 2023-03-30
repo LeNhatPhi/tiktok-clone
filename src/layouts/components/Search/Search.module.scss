@@ -1,0 +1,88 @@
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 46px;
+    border-radius: 92px;
+    background: #f1f1f2;
+    overflow: hidden;
+    border: 1px solid transparent;
+    > input {
+        flex: 1;
+        height: 100%;
+        background-color: transparent;
+        color: var(--black);
+        font-size: 1.6rem;
+        line-height: 22px;
+        padding: 0 16px;
+        caret-color: var(--primary);
+        &:not(:placeholder-shown) ~ .search-btn {
+            color: rgba(22, 24, 35, 0.75);
+        }
+    }
+    &:focus-within {
+        border-color: rgba(22, 24, 35, 0.2);
+    }
+
+    .loading {
+        animation: spinner 0.8s ease-in-out infinite;
+    }
+    @keyframes spinner {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    .clear,
+    .loading {
+        margin-right: 15px;
+        color: #a7a7ab;
+        font-size: 1.47rem;
+    }
+    .search-btn {
+        width: 52px;
+        height: 100%;
+        color: var(--search-lightGray-color);
+        font-size: 1.884rem;
+        position: relative;
+        transition: background 0.1s ease-in-out;
+        .icon {
+            padding: 12px 16px;
+        }
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0.5px;
+            height: 28px;
+            background: var(--search-lightGray-color);
+            opacity: 0.4;
+        }
+        &:hover {
+            cursor: pointer;
+            background: rgba(22, 24, 35, 0.03);
+        }
+        &:active {
+            background: rgba(22, 24, 35, 0.06);
+        }
+    }
+}
+
+//todo Common styled Elements
+.search,
+.search-results {
+    width: 361px;
+}
+.search-results {
+    margin-top: -2px;
+    .search-title {
+        padding: 5px 12px;
+        font-weight: 400;
+        color: rgba(22, 24, 35, 0.5);
+        line-height: 20px;
+        font-weight: 600;
+        font-size: 1.4rem;
+    }
+}
